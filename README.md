@@ -18,4 +18,4 @@ The project uses phpmyadmin image
 The application runs using PORT 8081
 
 ### Cluster initialize Observation
-Execute kubectl apply -f k8s/
+Execute kubectl apply -f .
