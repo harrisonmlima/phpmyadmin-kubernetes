@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: phpmyadmin:5.2.0
+        ports:
+        - containerPort: 80
+        env:
+          - name: PMA_PMADB
+            value: mariadb
+          - name: PMA_PORT
+            value: "3306"
+          - name: PMA_USER
+            value: root
+          - name: PMA_PASSWORD
+            value: mariadbpwd
+          - name: PMA_HOST
+            value: mariadb
